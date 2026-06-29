@@ -6,7 +6,7 @@
 
 **Credit liquidity for the agent economy.**
 
-[![protocol: x402](https://img.shields.io/badge/protocol-x402-7c3aed)](https://x402.org)
+
 [![chain: Base](https://img.shields.io/badge/chain-Base-0052FF)](https://base.org)
 [![license: MIT](https://img.shields.io/badge/license-MIT-3fb950)](./LICENSE)
 [![npm](https://img.shields.io/npm/v/credio-sdk?color=FF2D8F)](https://www.npmjs.com/package/credio-sdk)
