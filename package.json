@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "credio-sdk",
   "version": "0.1.0",
-  "description": "Credit layer for AI agents on x402 (Base). Front USDC for your agent's x402 payments and repay on-chain — non-custodial, no API keys.",
+  "description": "Credit layer for AI agents on x402 (Base). Front USDC for your agent's x402 payments and repay on-chain â€” non-custodial, no API keys.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -27,7 +27,7 @@
     "payments",
     "credio"
   ],
-  "homepage": "https://credio.cc",
+  "homepage": "https://credio.fun",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CredioX402/credio-sdk.git"
@@ -40,3 +40,4 @@
     "typescript": "^5.4.0"
   }
 }
+

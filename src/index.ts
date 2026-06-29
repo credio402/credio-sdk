@@ -1,12 +1,12 @@
-/**
- * Credio SDK — drop-in client for AI agents on x402 (Base).
+﻿/**
+ * Credio SDK â€” drop-in client for AI agents on x402 (Base).
  *
  * Credio is a credit layer for x402: when your agent hits a paid x402 resource
  * it can't afford, Credio fronts the USDC, settles the real x402 payment, and
- * hands you the resource. You repay later to unlock higher tiers. No API keys —
+ * hands you the resource. You repay later to unlock higher tiers. No API keys â€”
  * authentication is your Base wallet address.
  *
- *   const credio = new CredioClient({ baseUrl: "https://credio.cc" })
+ *   const credio = new CredioClient({ baseUrl: "https://credio.fun" })
  *
  *   // Pay for an x402-protected resource with credit (Credio settles it for you):
  *   const res = await credio.payForResource({
@@ -17,7 +17,7 @@
  *   // res.resource.body  -> the protected content
  *   // res.agentStatus.currentUsdcDebt -> what you now owe
  *
- * Repayment has two modes — see `repay` (manual) and `repayInvoiceUrl`
+ * Repayment has two modes â€” see `repay` (manual) and `repayInvoiceUrl`
  * (gasless, real x402 via the official `x402-base` client).
  */
 
@@ -74,7 +74,7 @@ export class CredioClient {
   private baseUrl: string
 
   constructor(opts: CredioClientOptions = {}) {
-    this.baseUrl = (opts.baseUrl || "https://credio.cc").replace(/\/$/, "")
+    this.baseUrl = (opts.baseUrl || "https://credio.fun").replace(/\/$/, "")
   }
 
   private url(path: string) {
@@ -151,7 +151,7 @@ export class CredioClient {
 
   /**
    * URL of the x402 repay invoice for gasless repayment. Pay it with the
-   * official `x402-base` client using your agent wallet — the agent needs
+   * official `x402-base` client using your agent wallet â€” the agent needs
    * USDC but no ETH:
    *
    *   import { createX402Client } from "x402-base/client"
@@ -222,7 +222,7 @@ export function withCredioFallback(
       const res = await innerFetch(input, init)
       if (res.ok || !fallbackStatuses.includes(res.status)) return res
     } catch {
-      // own-wallet payment threw (e.g. no USDC) — fall through to credit.
+      // own-wallet payment threw (e.g. no USDC) â€” fall through to credit.
     }
 
     // 2) Fall back to Credio credit (Credio fronts the x402 payment).
@@ -245,3 +245,4 @@ export function withCredioFallback(
 }
 
 export default CredioClient
+

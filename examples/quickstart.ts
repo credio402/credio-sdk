@@ -1,5 +1,5 @@
-/**
- * Credio quickstart — credit + repayment for an x402 agent.
+﻿/**
+ * Credio quickstart â€” credit + repayment for an x402 agent.
  *
  *   npm i credio-sdk
  *   AGENT_WALLET=<your base address> npx tsx examples/quickstart.ts
@@ -7,7 +7,7 @@
 import { CredioClient } from "credio-sdk"
 
 const WALLET = process.env.AGENT_WALLET || "YOUR_BASE_WALLET_ADDRESS"
-const credio = new CredioClient({ baseUrl: "https://credio.cc" })
+const credio = new CredioClient({ baseUrl: "https://credio.fun" })
 
 async function main() {
   // 1) Check how much credit this agent has available.
@@ -17,7 +17,7 @@ async function main() {
   //    settles the real x402 payment, and returns the resource.
   const res = await credio.payForResource({
     agentWalletAddress: WALLET,
-    resourceUrl: "https://credio.cc/api/demo/premium", // any x402 endpoint
+    resourceUrl: "https://credio.fun/api/demo/premium", // any x402 endpoint
     agentMetadata: { agentName: "Quickstart Agent" },
   })
 
@@ -29,7 +29,7 @@ async function main() {
   console.log("settled tx:", res.settlementTx)
   console.log("debt now:", res.agentStatus?.currentUsdcDebt, "USDC")
 
-  // 3) Repay — gasless x402 (recommended). Pay the repay invoice with the
+  // 3) Repay â€” gasless x402 (recommended). Pay the repay invoice with the
   //    official x402-solana client; the agent needs USDC but no SOL:
   //
   //   import { createX402Client } from "x402-base/client"
@@ -43,3 +43,4 @@ async function main() {
 }
 
 main().catch(console.error)
+
